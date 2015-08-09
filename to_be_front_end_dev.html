@@ -1,0 +1,245 @@
+<html>
+    <head>Welcome To Front-End World</head>
+    <meta charset="utf-8" />
+    <style>
+        .slider{
+            border: 1px solid black;
+            width: 440px;
+/*            height: 50px;   */
+            vertical-align: middle;
+        }
+        .controller{
+            display: inline;
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+            background-color: purple;
+        }
+        .controller, .controller a, .controller span{
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+/*
+        .select_none{
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+*/
+        .content{
+            vertical-align: middle;
+            display: inline-block;
+            max-width: 400px;
+            width: 400px;
+            padding: 5px 0px;
+/*            height: 40px;*/
+            white-space: nowrap;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .item{
+            display: inline-block;
+            border: 1px solid black;
+            background-color: red;
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+            text-align: center;
+            cursor: pointer;
+            
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+/*
+        .item:first-child{
+            display: inline-block;
+            border: 1px solid black;
+            background-color: yellow;
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+        }
+        .item:last-child{
+            display: inline-block;
+            border: 1px solid black;
+            background-color: green;
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+        }
+*/
+        .active{
+            border: 3px solid aqua;
+        }
+        .controller a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <body>
+        <div class="slider">
+            <div class="controller next"><a href="javascript:void(0)"><span>&larr;</span></a></div>
+            <div class="content">
+                <div class="item active">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">10</div>
+                <div class="item">11</div>
+                <div class="item">12</div>
+                <div class="item">13</div>
+                <div class="item">14</div>
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">10</div>
+                <div class="item">11</div>
+                <div class="item">12</div>
+                <div class="item">13</div>
+                <div class="item">14</div>
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">10</div>
+                <div class="item">11</div>
+                <div class="item">12</div>
+                <div class="item">13</div>
+                <div class="item">14</div>
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">10</div>
+                <div class="item">11</div>
+                <div class="item">12</div>
+                <div class="item">13</div>
+                <div class="item">14</div>
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">10</div>
+                <div class="item">11</div>
+                <div class="item">12</div>
+                <div class="item">13</div>
+                <div class="item">14</div>
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">10</div>
+                <div class="item">11</div>
+                <div class="item">12</div>
+                <div class="item">13</div>
+                <div class="item">14</div>
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">10</div>
+                <div class="item">11</div>
+                <div class="item">12</div>
+                <div class="item">13</div>
+                <div class="item">14</div>
+            </div>
+            <div class="controller previous"><a href="javascript:void(0)"><span>&rarr;</span></a></div>
+        </div>
+    </body>
+    <script>
+//        var next = document.getElementsByClassName("next")[0];
+//        var previous = document.getElementsByClassName("previous")[0];
+//        next.addEventListener("click", function(){
+//            alert("NEXT");
+//        });
+//        previous.addEventListener("click", function(){
+//            alert("PRE");
+//        });
+        $(".previous").click(function(){
+            $(".content").animate({
+                scrollLeft: "+=40"   
+            }, "fast");
+        });
+        
+        $(".next").click(function(){
+            $(".content").animate({
+                scrollLeft: "-=40"
+            }, "fast");
+        });
+        $(".item").click(function(){
+//            alert($(this).offset().left);
+//            $(this).css("border", "3px solid aqua");
+            $(".item").removeClass("active");
+            $(this).addClass("active");
+        });
+        var startX;
+        var endX;
+        $(".content").on("mousedown", ".item", function(event){
+//            event.preventDefault();
+            startX = $(this).offset().left;
+        });
+        $(".content").on("mouseup", ".item", function(){
+            endX = $(this).offset().left;
+            distance = startX-endX;
+            if (distance > 0) distance += 20;
+            else distance -=20;
+            $(".content").animate({scrollLeft: "+="+distance}, "200");
+        });
+        
+    </script>
+</html>
