@@ -1,0 +1,104 @@
+.profile-frame{
+    padding: 20px;
+    background-color: #33485F;
+    text-align: center;
+}
+.profile-card{
+    border-radius: 3px;
+    display: inline-block;
+    margin: auto;
+    background-color: white;
+}
+.profile {
+    font-family: sans-serif;
+    display: inline-block;
+    text-align: center;
+    padding: 0px 10px;
+    vertical-align: bottom;
+    top: -20px;
+    position: relative;
+}
+.profile *{
+    display: block;
+
+}
+.profile .image{
+    background-color: #3498DB;
+    border-radius: 50%;
+    padding: 15px;
+    width: 32px;
+    height: 32px;
+    margin: auto;
+}
+.profile .name{
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.profile .job{
+    margin: 5px;
+    font-size: 1rem;
+}
+.profile .actions{
+
+}
+.profile .actions .button{
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 170px;
+    background-color: white;
+    margin: 5px;
+    font-weight: bold;
+    color: #194256;
+}
+.stats{
+    display: inline-block;
+}
+.stats .box{
+    display: block;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    background-color: #3498DB;
+    margin-bottom: 1px;
+}
+.stats .box *{
+    font-family: sans-serif;
+    display: block;
+}
+@media (max-width: 360px) {
+    .stats{
+        width: 100%;
+    }
+    .stats .box:first-child{
+    }
+    .stats .box:last-child{
+        margin-bottom: 0;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+}
+
+@media (min-width: 361px) {
+    .stats .box:first-child{
+        border-top-right-radius: 3px;
+    }
+    .stats .box:last-child{
+        margin-bottom: 0;
+        border-bottom-right-radius: 3px;
+    }
+    .stats .box *{
+        font-family: sans-serif;
+        display: block;
+    }
+}
+.stats .box .value{
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+.stats .box .parameter{
+    font-size: 0.8rem;
+    font-weight: thin;
+}
