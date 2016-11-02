@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title>Arrow</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Roboto');
+		*{
+			font-family: 'Roboto', sans-serif;	
+		}
+		.arrow-menu {
+			list-style: none;
+			overflow: hidden;
+			font-size: 13px;
+			font-weight: bold;
+		}
+		.arrow-menu li:first-child {
+			padding-left: 25px;
+			/*width: 190px;*/
+		}
+		.arrow-menu li {
+			color: #777;
+			padding: 4px 0 10px 65px;
+			background: #f1f1f1;
+			position: relative;
+			display: block;
+			float: left;
+			height: 25px;
+			/*width: 230px;*/
+		}
+
+		.arrow-menu li:before {
+			content: " ";
+			display: block;
+			width: 0;
+			height: 0;
+			border-top: 50px solid transparent;
+			border-bottom: 50px solid transparent;
+			border-left: 40px solid white;
+			position: absolute;
+			top: 50%;
+			margin-top: -50px;
+			margin-left: 10px;
+			left: 100%;
+			z-index: 1;
+		}
+		.arrow-menu li:after {
+			content: " ";
+			display: block;
+			width: 0;
+			height: 0;
+			border-top: 50px solid transparent;
+			border-bottom: 50px solid transparent;
+			border-left: 40px solid #f1f1f1;
+			position: absolute;
+			top: 50%;
+			margin-top: -50px;
+			left: 100%;
+			z-index: 2;
+		}
+
+		.arrow-menu-active {
+			background: #f9578f!important;
+			color: white!important;
+		}
+		.arrow-menu-active:after {
+			border-left-color: #f9578f!important;
+		}
+	</style>
+</head>
+<body>
+	<ul class="arrow-menu"> 
+		<li><span> Sign-in with your Google account </span></li> 
+		<li class="arrow-menu-active"><span> Accept Developer Agreement </span></li> 
+		<li><span> Pay Registration Fee </span></li> 
+		<li><span> Complete your Account details </span></li> 
+	</ul>
+</body>
+</html>
