@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Swap Button</title>
+		<style type="text/css">
+			.button-block *{
+				display: inline-block;
+			}
+			.button-block #button1{
+				padding: 10px;
+				background: blue;
+				border: none;
+				color: white;
+				margin: 5px;
+			}
+			
+			.button-block #button2{
+				padding: 10px;
+				background: red;
+				border: none;
+				color: white;
+				margin: 5px;
+			}
+		</style>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class='button-block'>
+			<button id='button1'>Button 1</button><!--
+			--><button id='button2'>Button 2</button>
+		</div>
+		<script type="text/javascript">
+			setInterval(function(){
+				var button1 = $('.button-block button').get(0);
+				var button2 = $('.button-block button').get(1);
+				$('.button-block').empty();
+					$('.button-block').append(button2);
+					$('.button-block').append(button1);
+			}, 2000);
+		</script>
+	</body>
+</html>

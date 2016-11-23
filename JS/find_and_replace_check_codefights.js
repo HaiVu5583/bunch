@@ -1,16 +1,3 @@
-// For
-
-// code1 = ["def is_even_sum(a, b):",
-//          "    return (a + b) % 2 == 0"]
-// and
-
-// code2 = ["def is_even_sum(summand_1, summand_2):",
-//          "    return (summand_1 + summand_2) % 2 == 0"]
-// the output should be plagiarismCheck(code1, code2) = true.
-
-// All occurrences of a are replaced with summand_1, and all occurrences of b are replaced with summand_2.
-
-
 function isEqual(array1, array2){
     if (array1.length != array2.length){
         return false;
@@ -26,8 +13,6 @@ function isEqual(array1, array2){
 function plagiarismCheck(code1, code2){
     var nonCharacterRe = new RegExp("\\W+", "g");
     var characterRe = new RegExp("\\w+", "g");
-    var replaceWord1 = [];
-    var replaceWord2 = [];
     var replaceMap = {};
     if (code1.length != code2.length){
         return false;
@@ -47,27 +32,22 @@ function plagiarismCheck(code1, code2){
         }
         for (var j=0; j<characterArr1.length; j++){
             if (characterArr1[j] != characterArr2[j]){
-                if (!replaceWord1.includes(characterArr1[j])){
-                    replaceWord1.push(characterArr1[j]);
+                if (!replaceMap[characterArr1[j]]){
+                    replaceMap[characterArr1[j]] = characterArr2[j];
                 }
-                if (!replaceWord2.includes(characterArr2[j])){
-                    replaceWord2.push(characterArr2[j]);
-                }
-                // if (!replaceMap[characterArr1[j]]){
-                //     replaceMap[characterArr1[j]] = characterArr2[j];
-                // }
             }
         }
     }
-    console.log(replaceWord1);
-    console.log(replaceWord2);
-    // console.log(replaceMap);
-    // var replaceRe = RegExp(Object.keys(replaceMap).join("|"),"gi");
+
+    var keyArr = Object.keys(replaceMap);
     for (var i=0; i<code1.length; i++){
-        for (j=0; j<replaceWord1.length; j++){
-            code1[i] = code1[i].replace(replaceWord1[j], replaceWord2[j]);
+        for (j=0; j<keyArr.length; j++){
+            var replaceRe = new RegExp(keyArr[j], "g");
+            code1[i] = code1[i].replace(replaceRe, replaceMap[keyArr[j]]);
+            // console.log("i: "+i+ "  "+code1[i]);
         }
     }
+
     console.log(code1);
     if (isEqual(code1, code2)){
         return true;
@@ -84,10 +64,10 @@ var code2 = ["def is_even_sum(summand_1, summand_2):",
          "    return (summand_1 + summand_2) % 2 == 0"];
 
 // FAILED
-var   code1 =  ["def return_smth(a, b):", 
- "  return a + a"];
-var code2 =  ["def return_smth(b, a):", 
- "  return b + b"];
+// var   code1 =  ["def return_smth(a, b):", 
+//  "  return a + a"];
+// var code2 =  ["def return_smth(b, a):", 
+//  "  return b + b"];
 
 // FAILED
 
